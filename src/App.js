@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 
 const App = () => {
+  const [timerDays, setTimerDays] = useState("00");
+  const [timerHours, setTimerHours] = useState("00");
+  const [timerMinutes, setTimerMinutes] = useState("00");
+  const [timerSeconds, setTimerSeconds] = useState("00");
+
+  var interval = useRef();
+
+  const startTuner = () => {
+    const countdownDate = new Date("May 30, 2020 00:00:00").getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const minutes = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const seconds = Math.floor(distance / (1000 * 60 * 60 * 24));
+    
+    }, 1000);
+  };
+
   return (
     <section className="timer-container">
       <section className="timer">
