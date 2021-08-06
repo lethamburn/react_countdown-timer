@@ -18,7 +18,7 @@ const App = () => {
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (100 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -51,9 +51,7 @@ const App = () => {
         <div>
           <span className="mdi mdi-calendar-clock timer-icon"></span>
           <h2>Countdown Timer</h2>
-          <p>
-            DUNE
-          </p>
+          <p>DUNE</p>
         </div>
         <div>
           <section>
